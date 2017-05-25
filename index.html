@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 0</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><p><div class="toc">
+<ul>
+<li><a href="#task-0">TASK 0</a><ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#structure">Structure</a></li>
+</ul>
+</li>
+<li><a href="#basics-of-git">Basics of Git</a><ul>
+<li><a href="#task-a">Task A</a></li>
+</ul>
+</li>
+<li><a href="#introduction-to-algorithms">Introduction To Algorithms</a><ul>
+<li><a href="#intro">Intro</a></li>
+<li><a href="#resources">Resources</a><ul>
+<li><a href="#time-complexity">Time Complexity</a></li>
+<li><a href="#searching">Searching</a></li>
+<li><a href="#sorting">Sorting</a></li>
+</ul>
+</li>
+<li><a href="#contest">Contest</a></li>
+</ul>
+</li>
+<li><a href="#problem-statement">Problem Statement</a><ul>
+<li><a href="#subtask-1">SUBTASK 1</a></li>
+<li><a href="#subtask-2-hackermode">SUBTASK 2 (Hackermode)</a></li>
+</ul>
+</li>
+<li><a href="#submission">SUBMISSION </a></li>
+<li><a href="#general-instructions">General Instructions</a></li>
+</ul>
+</div>
+</p>
+
+
+
+<h1 id="task-0">TASK 0</h1>
+
+
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Welcome to spider algorithms inductions 2017! Here on out, a 2 month long journey beings that will help you learn from novice to expert level, all about algorithms.</p>
+
+
+
+<h2 id="structure">Structure</h2>
+
+<p>The task is split into 3 parts:</p>
+
+<ul>
+<li>Learning the basics of version control. <br>
+<ul><li>Here you have to learn what git is all about.</li></ul></li>
+<li>Introduction to algorithms.</li>
+<li>Implementation of a given problem statement.</li>
+</ul>
+
+
+
+<h1 id="basics-of-git">Basics of Git</h1>
+
+<p><strong>This tutorial will cover the basics on how to start working with git and publish your works to gitHub.</strong></p>
+
+<p><strong>Version Control:</strong></p>
+
+<blockquote>
+  <p><strong>Version control as stated in progit book:</strong></p>
+  
+  <ul>
+  <li>“<em>What is version control, and why should you care? Version control is a system that records changes to a file or set of files over time so that you can recall specific versions later.</em></li>
+  <li><em>If you are a graphic or web designer and want to keep every version of an image or layout (which you would most certainly want to), a Version Control System (VCS) is a very wise thing to use. It allows you to revert files back to a previous state, revert the entire project back to a previous state, compare changes over time, see who last modified something that might be causing a problem, who introduced an issue and when, and more. Using a VCS also generally means that if you screw things up or lose files, you can easily recover. In addition, you get all this for very little overhead.</em>”</li>
+  </ul>
+</blockquote>
+
+<p>To sum up, version control system basically means, you keep track of all the changes you have made from the start of any project and be able to revert to any point as and when needed. Also, in case of team projects, it will be easy for each member to keep track of the changes made by others and get the updated copy without much hassle.</p>
+
+<p>There are a lot of options in Version Control Systems such as Git, Mercurial, Bazaar or Darcs out of which Git is being used extensively both worldwide and in our college :p. So, we will be covering how to setup and use git to maintain our projects. At the end, you will also be given a small task based on git which will help you understand it better.</p>
+
+<p>Installing Git: </p>
+
+<pre><code>Follow the steps given in the following link to install git. It covers git installation for Linux, MacOS and Windows.
+</code></pre>
+
+<blockquote>
+  <p><a href="https://www.atlassian.com/git/tutorials/install-git">Git installation</a></p>
+</blockquote>
+
+<p>If you find any problems regarding installation, do contact your mentors.</p>
+
+<p>Also, if you want to learn about any commands in git, use the command “git help <strong>verb</strong>” (<strong>verb</strong> replacing the command you want to know about).</p>
+
+<p><strong>GitHub:</strong></p>
+
+<pre><code>GitHub is a web-based Git or version control system and Internet Hosting Service. The projects written in our system will be pushed to an online platform so that your team members can view the changes made. 
+</code></pre>
+
+<blockquote>
+  <p>Goto <a href="https://github.com">Github.com</a> and create an account if haven’t already created.</p>
+</blockquote>
+
+<p>The term project in git terms is called <strong>repository</strong> or in short <strong>repo</strong>. We will also be using <strong>repo</strong> or <strong>repository</strong> in place of projects.</p>
+
+<blockquote>
+  <p>The files in the project directory can be classifeid into four types.</p>
+  
+  <ul>
+  <li><strong>untracked:</strong> The file is not tracked by the Git repository.</li>
+  <li><strong>tracked:</strong> The modifications in the file has been recorded by git.</li>
+  <li><strong>staged:</strong> This is new term. To stage a file is simply to prepare it finely for a commit. Git, with its index allows you to commit only certain parts of the changes you’ve done since the last commit. Say you’re working on two features - one is finished, and one still needs some work done. You’d like to make a commit and go home (5 o’clock, finally!) but wouldn’t like to commit the parts of the second feature, which is not done yet. You stage the parts you know belong to the first feature, and commit. Now your commit is your project with the first feature done, while the second is still in work-in-progress in your working directory.</li>
+  <li><strong>dirty / modified:</strong> The file has changed but the change is not staged.</li>
+  </ul>
+</blockquote>
+
+<p>The main difference between untracked and dirty/modified is that in case of untracked, the tracking of files has not been started, whereas in dirty/modified, the files are being tracked, but modified later and the changes are yet to be committed.</p>
+
+<p><strong>Some commonly used commands:</strong> <br>
+<strong>1. git init:</strong></p>
+
+<pre><code>Executing git init creates a .git subdirectory in the current working directory, which is responsible for storing all the details related to the tracking information of that directory. 
+</code></pre>
+
+<p><strong>2. git add:</strong></p>
+
+<pre><code>The next important cammand is **git add _file-name_**. Once you have added a new file or modified an existing file in the repository, you can handpick the files you want to stage using this command. If you want to stage all the modified files, you can use **“git add .”**. 
+</code></pre>
+
+<p><strong>3. git commit:</strong></p>
+
+<pre><code>The git commit command commits the staged snapshot to the project history. Committed snapshots can be thought of as “safe” versions of a project—Git will never change them unless you explicity ask it to. Along with git add, this is one of the most important Git commands. The syntax for the command is **_git commit -m “some commit message”_**. Use proper commit messages. Your commit message should be a very short description on what the changes in that particular commit is about.
+</code></pre>
+
+<p>Till now, we have seen some commands to work with our local repository. now, we will proceed on to how to push our code to the internet for the world to see.</p>
+
+<p><strong>4. git push:</strong></p>
+
+<pre><code>This command is used to push all your local changes to your remote(i.e., a repository in GitHub) repository. Before pushing your work, we first have to create a GitHub repository.
+</code></pre>
+
+<blockquote>
+  <p><strong>Follow the steps to create a repo in GitHub:</strong></p>
+  
+  <ul>
+  <li><p>In the upper-right corner of any page, click + and then click New repository.  </p></li>
+  <li><p>Type a short, memorable name for your repository. For example, “hello-world”. </p></li>
+  <li><p>Optionally, add a description of your repository. For example, “My first repository on GitHub.” </p></li>
+  <li><p>Click on create repository. </p></li>
+  <li><p>To make our local repo point to the new created gitHub repo, execute the following commang in the terminal from your project directory. <code>git remote add origin https://github.com/user-name/repo-name.git</code>. </p></li>
+  <li><p>That’s it. So, simple right?</p></li>
+  </ul>
+</blockquote>
+
+<p>For pushing you commits, execute the command <code>git push origin branch-name</code>. By default branch-name will be master.</p>
+
+<blockquote>
+  <p>For further detailed documentation, refer <a href="https://git-scm.com/book/en/v2">https://git-scm.com/book/en/v2</a></p>
+</blockquote>
+
+
+
+<h2 id="task-a"><strong>Task A</strong></h2>
+
+<blockquote>
+  <ol>
+  <li>Create a GitHub repository. <br>
+  <ul><li>Create a readme.md file and write about yourselves using <strong>markdown (<em>google it</em>)</strong>. You can show your creativity here.</li></ul></li>
+  <li>Make a commit and push your changes.</li>
+  <li>Now, create a new branch from the current commit and add a new file named sorting.cpp and write your favourite sorting algorithm in that file and push it to your newly created branch.</li>
+  <li>Again branch-out from the current branch and add a commented line at the start of the file which should contain your first-name and your roll number. Now commit the changes and push to your new branch. Eg: <code>//Rohith 106115070</code></li>
+  <li>Now, come back to the previous branch where the sorting.cpp file was created and add a commented line containing your last-name and your roll number and commit it. Eg: <code>//Balaji 106115070</code></li>
+  <li>Merge the new branch with the current branch. You will be having some merge conflicts :p. Fix the conflicts and create a new commit.</li>
+  <li>Now merge the current branch with the master branch. Add a tag named <strong>“Final”</strong> to the last commit and push your code.</li>
+  <li>Submit your GitHub link in the below given box once you have completed the task.</li>
+  </ol>
+</blockquote>
+
+<p><strong>Topics to be learnt:</strong></p>
+
+<ol>
+<li>Git add</li>
+<li>Git commit</li>
+<li>Git push</li>
+<li>Git branch</li>
+<li>Git checkout</li>
+<li>Git merge</li>
+<li>Git remote</li>
+<li>Git tags</li>
+</ol>
+
+<p><strong>Happy coding!!!</strong></p>
+
+
+
+<h1 id="introduction-to-algorithms">Introduction To Algorithms</h1>
+
+
+
+<h2 id="intro">Intro</h2>
+
+<p>Now, that you have learnt the basics of git, you have to focus your attention towards algorithms. To begin with, we have linked a few pages and apps for you all to visit and download, please take time and go through each and everyone of these resources. </p>
+
+
+
+<h2 id="resources">Resources</h2>
+
+<p>Linked Below are the resources, you are to go through each and every one of these, in the same sequential order in which they are displayed</p>
+
+
+
+<h3 id="time-complexity">Time Complexity</h3>
+
+<ul>
+<li><a href="http://www.geeksforgeeks.org/analysis-algorithm-set-4-master-method-solving-recurrences/">Analysis of Complexity using various methods</a></li>
+<li><a href="https://www.hackerearth.com/practice/basic-programming/complexity-analysis/time-and-space-complexity/tutorial/">Time Complexity in practical applications</a></li>
+</ul>
+
+
+
+<h3 id="searching">Searching</h3>
+
+<ul>
+<li><a href="https://www.hackerearth.com/practice/notes/searching-code-monk/">Searching Techniques</a></li>
+<li><a href="http://www.geeksforgeeks.org/linear-search/">Linear Search</a></li>
+<li><a href="http://www.geeksforgeeks.org/binary-search/">Binary Search</a> <br>
+<ul><li><a href="http://www.cplusplus.com/reference/algorithm/lower_bound/">Lower Bound</a></li>
+<li><a href="http://www.cplusplus.com/reference/algorithm/upper_bound/">Upper Bound</a></li></ul></li>
+</ul>
+
+
+
+<h3 id="sorting">Sorting</h3>
+
+<ul>
+<li><a href="https://www.hackerearth.com/practice/notes/sorting-code-monk/">Sorting Techniques</a></li>
+</ul>
+
+<p>Indepth explaination about many of the popular sorting techniques.</p>
+
+<ul>
+<li><a href="http://www.geeksforgeeks.org/selection-sort/">Selection Sort</a></li>
+<li><a href="http://www.geeksforgeeks.org/insertion-sort/">Insertion Sort</a></li>
+<li><a href="http://www.geeksforgeeks.org/merge-sort/">Merge Sort</a></li>
+<li><a href="http://www.geeksforgeeks.org/quick-sort/">Quick Sort</a></li>
+<li><a href="http://www.geeksforgeeks.org/bucket-sort-2/">Bucket Sort</a></li>
+<li><a href="http://www.geeksforgeeks.org/radix-sort/">Radix Sort</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bogosort">Bogo Sort</a> (Do check this algorithm out, the concept is pretty unique).</li>
+</ul>
+
+<blockquote>
+  <p><strong>Note:</strong> Install the <a href="https://play.google.com/store/apps/details?id=com.hackerearth.codemonk">CodeMonk</a> app available for android devices. This app contains articles for many algorithms, and can be used as a handybook as well as a reference guide.</p>
+</blockquote>
+
+
+
+<h2 id="contest">Contest</h2>
+
+<p>In order to assist and aid your learning, a <strong>HackerRank</strong> contest has been put up. Everyone is requested to sign up for and solve the question posted on the contest. These questions will be based on the resources that we have provided, and solving them will boost your understanding.</p>
+
+<blockquote>
+  <p>The contest is hosted here: <a href="https://www.hackerrank.com/spider-playground">Spider Playground</a></p>
+</blockquote>
+
+
+
+<h1 id="problem-statement">Problem Statement</h1>
+
+<blockquote>
+  <p><strong>CASE STUDY</strong></p>
+  
+  <p>In the slums of Mumbai , there lives a small family of three - Mrs. Sobha and her two children Jasmine and Kamal. Jasmine works at a tailor shop whereas Kamal works in a nearby motor garage. Though they are employed and earn enough money for their survival , they have bigger dreams. Jasmine wants  to open her own curtain shop whereas Kamal dreams to establish his own car garage. To fulfill their dreams Mrs. Sobha saves a lot of money from the household expenses .</p>
+</blockquote>
+
+
+
+<h2 id="subtask-1"><strong>SUBTASK 1</strong></h2>
+
+<p>Now , Mrs. Sobha has enough money so that Jasmine’s own shop can be opened. They all started to make preparations for the shop but they found out two problems in their business.</p>
+
+<ol>
+<li><p>There is problem of fragmentation in curtain cloth pieces i.e. If Jasmine has two cloth pieces of 10 mtrs and a customer ask for a 9 mtr piece , she has to cut it from one of the 10 mtrs piece and keep the 1 mtr piece with her . As nobody buys these small cut pieces , it accounts for a huge loss .</p></li>
+<li><p>They could not acquire a bigger plot for their shop so they need to stack up all the curtain pieces one over the other . This makes it really difficult and time consuming to take out one from somewhere at the middle or bottom of the stack.</p></li>
+</ol>
+
+<p>To overcome these problems , the whole family brainstorms and figure out different solutions which are :</p>
+
+<ol>
+<li><p>Mrs. Sobha suggests that whenever a customer demands for a specific length curtain piece , they should look from the top of the stack and whichever curtain piece can meet the demand <strong>first</strong>, they should cut out from that piece. </p>
+
+<p>But it was realized that this problem solves Problem 2 but it increases the Problem 1. For example , if the current available pieces in the stack are 2, 3 , 5, 1 (in the order of bottom to top) and a customer asks for 2 mtrs , it will be cut out from 5 mtrs piece and the stack looks like 2, 3, 3, 1 after serving the customer. It creates more fragmentation as there is already a 2 mtr piece available which could be used to meet the demand.</p></li>
+<li><p>Another solution is proposed by Kamal , he says the piece which <strong>“best fits”</strong> the demand should be used i.e. the smallest piece in the stack which is equal to or larger than the demand is used .</p>
+
+<p>This solution again could not solve problem 1 and 2 fully. In the previous example , if this logic was used , jasmine has to remove all the curtain pieces to reach the 2 mtr piece which is really time consuming . Also sometimes this logic might produce more fragmentation of smaller sizes , which is undesirable.</p></li>
+<li><p>Now Jasmine put forth her idea and says , why not pick the <strong>“worst one”</strong> , i.e. rather than picking the best fit as proposed in Kamal’s solution , she would pick the largest one which will meet the customer’s demand.</p>
+
+<p>Again this problem has some pros and cons (which you can easily figure out!)</p></li>
+</ol>
+
+<p>So the entire family is trying to decide upon the best solution by practically experimenting with all of them and see the results . But they cannot do it in real because they know it may cost a lot and they may end up being bankrupt . So they approach you to create a simulation for all three different proposals so that they can check the efficiency.</p>
+
+<hr>
+
+<blockquote>
+  <p><strong>INPUT FORMAT:</strong></p>
+  
+  <p>For each of the three simulations :</p>
+  
+  <p>There is a list of different curtain sizes present in the stack. <br>
+  There will be a list of queries where each query ask for a curtain piece of given size .</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+  <p><strong>OUTPUT FORMAT:</strong></p>
+  
+  <p>For each of the three simulations :</p>
+  
+  <p>After each query display the entire stack , i.e. the curtain sizes of all the pieces present in the stack after processing the query according to the presented logic.</p>
+</blockquote>
+
+
+
+<h2 id="subtask-2-hackermode"><strong>SUBTASK 2 (Hackermode)</strong></h2>
+
+<blockquote>
+  <p><i class="icon-help"></i>THIS SUBTASK IS A <strong>HACKERMODE TASK</strong>, IT IS NOT NECESSARY TO SUBMIT THIS TASK, BUT DOING SO WILL GIVE YOU MORE UNDERSTANDING ABOUT ADVANCED CONCEPTS. BEFORE ATTEMPTING THIS TASK MAKE SURE YOU HAVE <strong>COMPLETED THE NORMAL TASK</strong>, AND SUBMITTED IT TO YOUR MENTOR.</p>
+</blockquote>
+
+<p>Seeing the successful entrepreneurial journey of his sister Jasmine , Kamal is on his toes to kick-start his own garage . He works overtime and with a decent help from his sister he is able to establish his car garage within a year. Everything works fine for the initial days but then he started to realize a big problem in this business . Though his work is always appreciated , he is losing his customers in a very fast rate . With some customer feedbacks he realized  that it is only because of his customer service policy, which is according to only one rule :</p>
+
+<p><strong>First Come First Serve (FCFS)</strong> i.e. the customers who comes first , he first fixes his car completely before taking in another car. This is actually fair, but it leaves a lot of customers frustrated . They need to wait long hours to wait for their turn . So they start flocking towards other garages in the city.</p>
+
+<p>Kamal discusses this problem with his family and his mother Sobha gives her the following alternative. She says :</p>
+
+<blockquote>
+  <p>“Son , You cannot serve more than one  customer at a time but you can <strong>prioritize</strong> among them depending upon how <strong>important</strong> is that customer for you (i.e. depending upon how long a particular customer has been your client prioritize among them ) .”</p>
+</blockquote>
+
+<p>This looked a perfect solution immediately but in the long run Kamal realized that this policy is not allowing him to grow his business as he is only satisfying his old clients but the <strong>new customers are always ignored</strong> , so those new customer never come back to him.</p>
+
+<p>Kamal had no clue how to handle this problem until he met his uncle Sharad who is a smart marketing fellow. He gave him his suggestion:</p>
+
+<blockquote>
+  <p>“Kamal, You <strong>cannot do more than one job at a time</strong> , but you can satisfy all the customers simultaneously by partially doing everyone’s work in a <strong>Round Robin fashion</strong>.”</p>
+</blockquote>
+
+<p>It means, you do all the works in a circular manner where everyone is given a fixed amount of time  lets say <code>'K' minutes</code> . Everyone will see some progress in their work and this will act as a patience booster for all of them. They will start to turn optimistic that there work is also being done and it will be over soon .</p>
+
+<p>Kamal was blown out by this idea and immediately implements it to see fantastic results .</p>
+
+<p>Your task is to statistically analyze  all the three different ideas to figure why one works better than the others.</p>
+
+<blockquote>
+  <p><strong>INPUT FORMAT:</strong></p>
+  
+  <p>You will be given a table containing every customers id , their arrival time and the estimated amount of time required for their work.</p>
+  
+  <p><i class=" icon-right-open"></i>In case of Priority technique, an additional column will be added to  show priority for each customer (higher the value, greater is the priority).</p>
+  
+  <p>In case of Round Robin technique, along with the table , an additional value <code>K</code> will be given , which acts as <em>time quantum</em> will be given to each customer.</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+  <p><strong>OUTPUT FORMAT:</strong></p>
+  
+  <p>For each of the techniques:</p>
+  
+  <p>For each customer calculate the departure time , and then calculate the turnaround time .  <br>
+  <code>(turnaround time = departure time – arrival time)</code> .</p>
+</blockquote>
+
+<p><br></p>
+
+<blockquote>
+  <p><strong>NOTE:</strong> It would be nice , if you could show the gantt chart .(don’t worry if you don’t know what is gantt chart, it  is discussed in the example problem given below)</p>
+</blockquote>
+
+<p><strong>Important points to NOTE:</strong></p>
+
+<ol>
+<li><p>In case of FCFS , ties can be broken arbitrarily , i.e. if two customers have the sane arriving time , Kamal can choose any one of them randomly to serve first.</p></li>
+<li><p>Priority technique is preemptive , i.e. if Kamal is doing a particular task and in between a high priority task comes in , then Kamal will have to put the current task in the waiting and start doing the high priority task.</p></li>
+<li><p>In Priority technique , if suppose one customer is being served who has the priority ‘x’ and then a new customer comes who has the same priority ‘x’ then the current customer should be continued . But if two customers with same priorities are waiting to be served then anyone can be served first arbitrarily.</p></li>
+<li><p>In the Round Robin technique, the customers have to be treated fairly , i.e. a customer who is waiting for longer will be given the <strong>“Time Quantum”</strong> before a customer who has just arrived. Here also the ties are broken arbitrarily.</p></li>
+</ol>
+
+<hr>
+
+<p><strong>EXAMPLE CASE:</strong></p>
+
+<p>Lets say there are 4 customers arriving at the garage. The table shows the following details:</p>
+
+<table>
+<thead>
+<tr>
+  <th align="center">CUSTOMER ID</th>
+  <th align="center">ARRIVAL TIME</th>
+  <th align="center">ESTIMATED TIME REQUIRED</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td align="center">1</td>
+  <td align="center">0</td>
+  <td align="center">6</td>
+</tr>
+<tr>
+  <td align="center">2</td>
+  <td align="center">1</td>
+  <td align="center">3</td>
+</tr>
+<tr>
+  <td align="center">3</td>
+  <td align="center">1</td>
+  <td align="center">2</td>
+</tr>
+<tr>
+  <td align="center">4</td>
+  <td align="center">4</td>
+  <td align="center">1</td>
+</tr>
+</tbody></table>
+
+
+<p>Now Using FCFS technique , the customers are served in the following order :</p>
+
+<pre><code>     1-&gt; 2-&gt; 3-&gt; 4 (Note as customer 2 and 3 had the same arrival time , 2 is chosen before 3 which is completely random , we could choose 3 before 2 also)
+</code></pre>
+
+<p>the Gantt Chart is a Time based chart shows what work is done by Kamal at every time frame.</p>
+
+<table>
+<thead>
+<tr>
+  <th>Customer</th>
+  <th align="center">1</th>
+  <th align="center">1</th>
+  <th align="center">1</th>
+  <th align="center">1</th>
+  <th align="center">1</th>
+  <th align="center">1</th>
+  <th align="center">2</th>
+  <th align="center">2</th>
+  <th align="center">2</th>
+  <th align="center">3</th>
+  <th align="center">3</th>
+  <th align="center">4</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td><strong>Time</strong></td>
+  <td align="center">0-1</td>
+  <td align="center">1-2</td>
+  <td align="center">2-3</td>
+  <td align="center">3-4</td>
+  <td align="center">4-5</td>
+  <td align="center">5-6</td>
+  <td align="center">6-7</td>
+  <td align="center">7-8</td>
+  <td align="center">8-9</td>
+  <td align="center">9-10</td>
+  <td align="center">10-11</td>
+  <td align="center">11-12</td>
+</tr>
+</tbody></table>
+
+
+<p>Here the turnaround time for customers are:</p>
+
+<pre><code>    customer 1: 6-0 = 6 time units
+    customer 2: 9-1 = 8 time units
+    customer 3: 11-1 = 10 time units
+    customer 4: 12-4 = 8 time units
+</code></pre>
+
+<p>In the same way , following the rules for Priority technique and Round robin technique the turnaround  time and gantt chart can be obtained.</p>
+
+<h1 id="submission">SUBMISSION </h1>
+
+<p><strong>Task Submission:</strong></p>
+
+<p>Create a git repo and keep committing your changes to it. When you feel you have done the task, commit with the message </p>
+
+<blockquote>
+  <p>“[Final Commit]” (without quotes)</p>
+</blockquote>
+
+<p>You can keep on making changes to this even after the final commit, but remember that <strong>only when the final commit has been made, we will grade your submission.</strong> Any further improvements that you make will be added to your score. Please don’t forget to submit the link of your repo to the inductions website.</p>
+
+
+
+<h1 id="general-instructions">General Instructions</h1>
+
+<p>Please <strong>READ ALL THE INSTRUCTIONS ON THIS PAGE CAREFULLY</strong> before you begin your task. It is apparent when you ignore clear instructions and will reflect poorly in your evaluation.</p>
+
+<ul>
+<li><p>Write readable code. Write code with indentation and good readability. Pay attention to your variable names and object names.</p></li>
+<li><p>Write good commit messages. </p></li>
+<li><p>A good commit message should be short and to the point. It should give a &lt;10 word overview of what exactly the commit does. Messages like Updated XYZ.html and Change #5 , Change #6 etc. are examples of poor commit messages. A good commit message would be Update ABC.js to add sin() function . </p>
+
+<blockquote>
+  <p><a href="https://github.com/erlang/otp/wiki/Writing-good-commit-messages">This</a> is a great short guide on writing commit messages. Please go through it.</p>
+</blockquote></li>
+<li><p>Commit frequently, but not THAT frequently. A commit must have one definite basic logical change. A commit for changing a single character is not encouraged. Please do not flood your repositories with commits - a commit is not equal to a Ctrl+S. At the same time, don’t make a single commit change 20 files and 2000 lines of code.</p></li>
+<li><p>Test your own code thoroughly. Your code should be working for you, at the least. Do not submit code that you have not completely tested.</p></li>
+</ul></div></body>
+</html>
