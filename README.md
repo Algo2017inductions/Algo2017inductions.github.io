@@ -1,2 +1,2 @@
 # Algo2017inductions.github.io
-Github pages to demo the tasks
+github pages to demo the tasks
